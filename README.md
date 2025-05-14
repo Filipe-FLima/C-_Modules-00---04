@@ -48,7 +48,7 @@ This repository contains my solutions to the first five modules of the C++ curri
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/Filipe-FLima/C-_Modules-00---04.git
+    git clone https://github.com/Filipe-FLima/CPP-00.git
     ```
 
 2. Navigate to the specific module folder:
