@@ -48,13 +48,13 @@ This repository contains my solutions to the first five modules of the C++ curri
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/cpp-modules.git
+    git clone https://github.com/Filipe-FLima/C-_Modules-00---04.git
     ```
 
 2. Navigate to the specific module folder:
 
     ```bash
-    cd cpp-modules/ex00
+    cd ex00
     ```
 
 3. Compile the code:
@@ -66,7 +66,7 @@ This repository contains my solutions to the first five modules of the C++ curri
 4. Run the program:
 
     ```bash
-    ./your_program_name
+    ./program_name
     ```
 
 ---
@@ -97,6 +97,3 @@ Feel free to fork this repository, make improvements, or suggest changes. All fe
 
 ---
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
