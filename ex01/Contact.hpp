@@ -6,7 +6,7 @@
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 09:46:49 by flima             #+#    #+#             */
-/*   Updated: 2025/05/20 11:05:57 by flima            ###   ########.fr       */
+/*   Updated: 2025/05/20 12:31:48 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,12 @@ class	Contact
 		std::string	darkest_secret;
 	
 	public:
-	
+		// void	set_name(std::string detail);
+		// void	set_last_name(std::string detail);
+		// void	set_nickname(std::string detail);
+		// void	set_phone_number(std::string detail);
+		// void	set_darkest_secret(std::string detail);
+		void add_new_details(void);
 };
 
 #endif

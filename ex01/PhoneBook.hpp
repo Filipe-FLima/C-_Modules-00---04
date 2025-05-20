@@ -6,7 +6,7 @@
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 09:31:27 by flima             #+#    #+#             */
-/*   Updated: 2025/05/20 11:03:52 by flima            ###   ########.fr       */
+/*   Updated: 2025/05/20 12:09:02 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class PhoneBook
 	
 	public:
 		//creat constructor and destructor
-		
+		void	add_new_contact(void);
 		
 
 };
