@@ -6,7 +6,7 @@
 /*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 09:46:49 by flima             #+#    #+#             */
-/*   Updated: 2025/05/21 10:21:43 by flima            ###   ########.fr       */
+/*   Updated: 2025/05/21 14:14:46 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 class	Contact
 {
@@ -32,7 +33,10 @@ class	Contact
 		// void	set_nickname(std::string detail);
 		// void	set_phone_number(std::string detail);
 		// void	set_darkest_secret(std::string detail);
-		void add_new_details(void);
+		void		add_new_details(bool list_full);
+		void		print_saved_contacts(int index);
+		std::string	format_field(const std::string& field);
+		void		printout_contact_details(void);
 };
 
 #endif

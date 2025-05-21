@@ -6,7 +6,7 @@
 #    By: flima <flima@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/21 10:13:08 by flima             #+#    #+#              #
-#    Updated: 2025/05/21 10:47:09 by flima            ###   ########.fr        #
+#    Updated: 2025/05/21 14:02:13 by flima            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ GREEN   = \033[32m
 YELLOW  = \033[33m
 BOLD	= \033[1m
 
-CPPFLAGS = -Wall -Wextra -Werror
+CPPFLAGS = -Wall -Wextra -Werror -g
 CPPFLAGS += -std=c++98
 
 SRCS = Contact.cpp PhoneBook.cpp main.cpp
