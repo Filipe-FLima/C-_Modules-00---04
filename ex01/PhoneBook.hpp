@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
+/*   By: filipe <filipe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 09:31:27 by flima             #+#    #+#             */
-/*   Updated: 2025/05/21 13:45:51 by flima            ###   ########.fr       */
+/*   Updated: 2025/05/23 21:24:13 by filipe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 
 #include <string>
 #include <iostream>
-#include <sstream> 
+#include <sstream>
 #include <iomanip> //formata output
 #include "Contact.hpp"
 
-# define MaxContacts 1
+# define MaxContacts 2
 
 class PhoneBook
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
+/*   By: filipe <filipe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 09:46:46 by flima             #+#    #+#             */
-/*   Updated: 2025/05/21 14:19:51 by flima            ###   ########.fr       */
+/*   Updated: 2025/05/23 21:10:41 by filipe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,25 +41,78 @@ Contact::Contact(void)
 	darkest_secret = "";
 }
 
-void	Contact::add_new_details(bool list_full)
+void	Contact::add_phone_number()
 {
-	//use only std::cin to name, last name and nickname? because its just one word
-	std::cout << "Name: ";
-	while (name == "" || list_full)
-		std::getline(std::cin, name);
-	// std::cin >> name; //test behavior
-	std::cout << "Last name: ";
-	while (last_name == "" || list_full)
-		std::getline(std::cin, last_name);
-	std::cout << "Nickname: ";
-	while (nickname == "" || list_full)
-		std::getline(std::cin,nickname);
-	std::cout << "Phone Number: "; //protect it, just number
-	while (phone_number == "" || list_full)
+	
+	std::cout << "Phone Number: ";
+	while (true)
+	{
 		std::getline(std::cin, phone_number);
+		if (phone_number.empty())
+			std::cout << "Please enter a valid phone number: ";
+		else
+		{
+			bool is_digit = true;
+			for (size_t i = 0; i < phone_number.length(); ++i)
+			{
+				if (!std::isdigit(phone_number[i]))
+				{
+					is_digit = false;
+					std::cout << "Please enter a valid phone number: ";
+					break;
+				}
+			}
+			if (is_digit){
+				if (phone_number.length() < 10 || phone_number.length() > 15)
+					std::cout << "Please enter a valid phone number: ";
+				else
+					break ;
+			}
+		}
+				
+	}
+}
+
+
+void	Contact::add_new_details()
+{
+	std::cout << "Name: ";
+	while (true)
+	{
+		std::getline(std::cin, name);
+		if (name == "")
+			std::cout << "Please enter a name: ";
+		else
+			break ;
+	}
+	std::cout << "Last name: ";
+	while (true)
+	{
+		std::getline(std::cin, last_name);
+		if (last_name == "")
+			std::cout << "Please enter a last name: ";
+		else
+			break ;
+	}
+	std::cout << "Nickname: ";
+	while (true)
+	{
+		std::getline(std::cin,nickname);
+		if (nickname == "")
+			std::cout << "Please enter a nickname: ";
+		else
+			break ;	
+	}
+	add_phone_number();
 	std::cout << "Darkest Secret: ";
-	while (darkest_secret == "" || list_full)
+	while (true)
+	{
 		std::getline(std::cin, darkest_secret);
+		if (darkest_secret == "")
+			std::cout << "Please enter a darkest secret: ";
+		else
+			break ;
+	}
 }
 
 std::string	Contact::format_field(const std::string& field)
@@ -81,7 +134,7 @@ void	Contact::printout_contact_details(void)
 {
 	std::cout << "Name: " << name << '\n'
 		<< "Last name: " << last_name << '\n'
-		<< "Nickname" << nickname << '\n'
-		<< "Phone number" << phone_number << '\n'
-		<< "Darkest secret" << darkest_secret << std::endl;
+		<< "Nickname: " << nickname << '\n'
+		<< "Phone number: " << phone_number << '\n'
+		<< "Darkest secret: " << darkest_secret << std::endl;
 }

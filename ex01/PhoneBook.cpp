@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
+/*   By: filipe <filipe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 11:59:14 by flima             #+#    #+#             */
-/*   Updated: 2025/05/21 15:22:23 by flima            ###   ########.fr       */
+/*   Updated: 2025/05/23 21:54:03 by filipe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,17 +62,11 @@ PhoneBook::PhoneBook(void)
 
 void	PhoneBook::add_new_contact(void)
 {
-	bool	is_list_full;
-	
-	is_list_full = false;
-	if (saved_contacts == (MaxContacts - 1))
-		is_list_full = true;
-	else
-		//fix this condition
-	contacts[index % MaxContacts].add_new_details(is_list_full);
+	contacts[index % MaxContacts].add_new_details();
 	index = (index + 1) % MaxContacts;
-	if (saved_contacts < MaxContacts)
+	if (saved_contacts < MaxContacts - 1)
 		saved_contacts++;
+	std::cout << saved_contacts << std::endl;
 }
 
 void	PhoneBook::find_contact(void)
