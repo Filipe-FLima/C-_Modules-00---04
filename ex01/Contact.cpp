@@ -3,34 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: filipe <filipe@student.42.fr>              +#+  +:+       +#+        */
+/*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 09:46:46 by flima             #+#    #+#             */
-/*   Updated: 2025/05/23 21:10:41 by filipe           ###   ########.fr       */
+/*   Updated: 2025/05/24 13:36:16 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-// void	Contact::set_name(std::string detail)
-// {
-// 	name = detail;
-// }
-
-// void	Contact::set_last_name(std::string detail)
-// {
-// 	last_name = detail;
-// }
-
-// void	Contact::set_nickname(std::string detail)
-// {
-// 	nickname = detail;
-// }
-
-// void	Contact::set_phone_number(std::string detail)
-// {
-	
-// }
 
 Contact::Contact(void)
 {
@@ -58,13 +39,13 @@ void	Contact::add_phone_number()
 				if (!std::isdigit(phone_number[i]))
 				{
 					is_digit = false;
-					std::cout << "Please enter a valid phone number: ";
+					std::cout << "Please enter a valid phone NUMBER: ";
 					break;
 				}
 			}
 			if (is_digit){
 				if (phone_number.length() < 10 || phone_number.length() > 15)
-					std::cout << "Please enter a valid phone number: ";
+				std::cout << "Invalid phone number length. It must contain 10 to 15 digits: ";
 				else
 					break ;
 			}
@@ -76,12 +57,12 @@ void	Contact::add_phone_number()
 
 void	Contact::add_new_details()
 {
-	std::cout << "Name: ";
+	std::cout << "First name: ";
 	while (true)
 	{
 		std::getline(std::cin, name);
 		if (name == "")
-			std::cout << "Please enter a name: ";
+			std::cout << "Please enter a first name: ";
 		else
 			break ;
 	}
@@ -124,7 +105,7 @@ std::string	Contact::format_field(const std::string& field)
 
 void	Contact::print_saved_contacts(int index)
 {
-	std::cout << std::setw(10) << std::right << index << "|"
+	std::cout << std::setw(10) << std::right << (index + 1) << "|"
 		<< std::setw(10) << std::right << this->format_field(name) << "|"
 		<< std::setw(10) << std::right << this->format_field(last_name) << "|"
 		<< std::setw(10) << std::right << this->format_field(nickname) << "|" << std::endl;
@@ -132,7 +113,7 @@ void	Contact::print_saved_contacts(int index)
 
 void	Contact::printout_contact_details(void)
 {
-	std::cout << "Name: " << name << '\n'
+	std::cout << "First Name: " << name << '\n'
 		<< "Last name: " << last_name << '\n'
 		<< "Nickname: " << nickname << '\n'
 		<< "Phone number: " << phone_number << '\n'

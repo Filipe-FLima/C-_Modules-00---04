@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: filipe <filipe@student.42.fr>              +#+  +:+       +#+        */
+/*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 09:31:27 by flima             #+#    #+#             */
-/*   Updated: 2025/05/23 21:24:13 by filipe           ###   ########.fr       */
+/*   Updated: 2025/05/24 13:51:26 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 #include <string>
 #include <iostream>
 #include <sstream>
-#include <iomanip> //formata output
+#include <iomanip>
 #include "Contact.hpp"
 
-# define MaxContacts 2
+# define MaxContacts 8
 
 class PhoneBook
 {
@@ -29,13 +29,11 @@ class PhoneBook
 		int		saved_contacts;
 	
 	public:
-		//creat constructor and destructor
-		PhoneBook(void);
+		PhoneBook();
+		~PhoneBook();
 		void	add_new_contact(void);
 		void	look_up_contacts(void);
 		void	find_contact(void);
-		
 };
-
 
 #endif

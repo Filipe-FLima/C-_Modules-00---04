@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: filipe <filipe@student.42.fr>              +#+  +:+       +#+        */
+/*   By: flima <flima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 11:59:14 by flima             #+#    #+#             */
-/*   Updated: 2025/05/23 21:54:03 by filipe           ###   ########.fr       */
+/*   Updated: 2025/05/24 13:51:16 by flima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,7 @@
 
 #include "PhoneBook.hpp"
 
-// void Contact::add_new_contact(void)
-// {
-// 	std::string	contact_field;
-	
-// 	//condicao para replace o oldest contact
-// 	std::cout << "Name: ";
-// 	std::cin >> contact_field;
-// 	contacts[index % MaxContacts].set_name(contact_field);
-// 	std::cout << "Last name: ";
-// 	std::cin >> contact_field;
-// 	contacts[index % MaxContacts].set_last_name(contact_field);
-	
-// }
-
-PhoneBook::PhoneBook(void)
+PhoneBook::PhoneBook()
 {
 	std::cout << "\n=========================================================\n";
 	std::cout << "            📒 Welcome to your Personal PhoneBook 📒\n";
@@ -56,17 +42,22 @@ PhoneBook::PhoneBook(void)
 	std::cout << "\n---------------------------------------------------------\n" << std::endl;
 
 	index = 0;
-	saved_contacts = -1;
+	saved_contacts = 0;
 }
 
+PhoneBook::~PhoneBook()
+{
+	std::cout << "\n=========================================================\n";
+	std::cout << "              Your contacts are lost forever!\n";
+	std::cout << "=========================================================\n\n";
+}
 
 void	PhoneBook::add_new_contact(void)
 {
 	contacts[index % MaxContacts].add_new_details();
 	index = (index + 1) % MaxContacts;
-	if (saved_contacts < MaxContacts - 1)
+	if (saved_contacts < MaxContacts)
 		saved_contacts++;
-	std::cout << saved_contacts << std::endl;
 }
 
 void	PhoneBook::find_contact(void)
@@ -83,11 +74,11 @@ void	PhoneBook::find_contact(void)
 			std::cerr << "Invalid index. Please enter a valid integer." << std::endl;
 			continue ;
 		}
-		if (index < 0 || index > saved_contacts){
+		if (index < 1 || index > saved_contacts){
 			std::cerr << "This contact does not exist. Please enter a valid contact's index." << std::endl;
 			continue ;
 		}
-		contacts[index].printout_contact_details();
+		contacts[index - 1].printout_contact_details();
 		break;
 	}
 }
@@ -96,7 +87,7 @@ void	PhoneBook::look_up_contacts(void)
 	int	index;
 
 	index = 0;
-	if (saved_contacts == -1)
+	if (saved_contacts == 0)
 	{
 		std::cout << "Your phonebook is empty.\n";
 		return ;
@@ -105,7 +96,7 @@ void	PhoneBook::look_up_contacts(void)
 		<< std::setw(10) << std::right << "First Name" << "|"
 		<< std::setw(10) << std::right << "Last Name" << "|"
 		<< std::setw(10) << std::right << "Nickame" << "|" << std::endl;
-	while (index <= saved_contacts)
+	while (index < saved_contacts)
 	{
 		contacts[index].print_saved_contacts(index);
 		index++;

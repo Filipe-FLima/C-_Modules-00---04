@@ -6,7 +6,7 @@
 #    By: flima <flima@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/14 11:09:38 by filipe            #+#    #+#              #
-#    Updated: 2025/05/21 14:02:09 by flima            ###   ########.fr        #
+#    Updated: 2025/05/24 13:46:28 by flima            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,10 +27,9 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@g++ $(CPPFLAGS) $(OBJ) -o $(NAME)
-	@echo "\n$(GREEN)One, two, three, testing...$(RESET)$(BOLD)LET'S SPEAK LOUD$(RESET)\n"
+	@echo "\n$(GREEN)One, two, three, testing...$(BOLD)LET'S SPEAK LOUD$(RESET)\n"
 
-%.o: %.cppCPPFLAGS = -Wall -Wextra -Werror -g
-CPPFLAGS += -std=c++98
+%.o: %.cpp
 	@g++ $(CPPFLAGS) -c $< -o $@
 	@echo "$(GREEN)Compiling: $< into $@$(RESET)"
 
